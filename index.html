@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyeux Anniversaire Ahmat 🎉</title>
+    <style>
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:linear-gradient(135deg,#0f172a,#312e81,#7e22ce);
+    color:white;
+    overflow-x:hidden;
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:70px;
+    margin-bottom:20px;
+    animation:zoom 2s infinite alternate;
+    text-shadow:0 0 20px rgba(255,255,255,.8);
+}
+
+.hero h2{
+    font-size:55px;
+    color:#FFD700;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:25px;
+    margin-bottom:40px;
+}
+
+.btn{
+    text-decoration:none;
+    background:#FFD700;
+    color:#222;
+    padding:18px 45px;
+    border-radius:50px;
+    font-size:20px;
+    font-weight:bold;
+    transition:.4s;
+}
+
+.btn:hover{
+    background:white;
+    transform:scale(1.1);
+}
+
+/* ===========================
+   SECTIONS
+=========================== */
+
+section{
+    padding:100px 10%;
+}
+
+section h2{
+    text-align:center;
+    font-size:45px;
+    margin-bottom:40px;
+}
+
+/* ===========================
+   MESSAGE
+=========================== */
+
+.card{
+    max-width:900px;
+    margin:auto;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(15px);
+    border-radius:25px;
+    padding:50px;
+    line-height:2;
+    font-size:20px;
+    box-shadow:0 0 25px rgba(255,255,255,.2);
+}
+
+.signature{
+    text-align:center;
+    color:#FFD700;
+    font-size:28px;
+    margin-top:30px;
+}
+
+/* ===========================
+   GALERIE
+=========================== */
+
+.photos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.photos img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    border-radius:20px;
+    transition:.5s;
+    cursor:pointer;
+    box-shadow:0 10px 20px rgba(0,0,0,.4);
+}
+
+.photos img:hover{
+    transform:scale(1.08) rotate(2deg);
+}
+
+/* ===========================
+   GATEAU
+=========================== */
+
+.cake{
+    text-align:center;
+}
+
+.cake-emoji{
+    font-size:170px;
+    animation:bounce 2s infinite;
+}
+
+#wishBtn{
+    margin-top:30px;
+    padding:18px 45px;
+    border:none;
+    border-radius:50px;
+    background:#FFD700;
+    color:#111;
+    font-size:20px;
+    cursor:pointer;
+    transition:.4s;
+}
+
+#wishBtn:hover{
+    transform:scale(1.08);
+}
+
+/* ===========================
+   TIMER
+=========================== */
+
+.countdown{
+    text-align:center;
+}
+
+#timer{
+    font-size:55px;
+    font-weight:bold;
+    color:#FFD700;
+}
+
+/* ===========================
+   MUSIQUE
+=========================== */
+
+.music{
+    text-align:center;
+}
+
+#musicBtn{
+    padding:15px 40px;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    background:#FFD700;
+    color:#111;
+    font-size:20px;
+}
+
+/* ===========================
+   CITATION
+=========================== */
+
+.quote{
+    text-align:center;
+    font-size:24px;
+    line-height:2;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer{
+    text-align:center;
+    padding:70px;
+    background:rgba(0,0,0,.3);
+}
+
+footer h2{
+    color:#FFD700;
+    margin-bottom:20px;
+}
+
+/* ===========================
+   BALLONS
+=========================== */
+
+.balloons{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    overflow:hidden;
+    pointer-events:none;
+}
+
+.balloons span{
+    position:absolute;
+    bottom:-150px;
+    font-size:50px;
+    animation:fly 15s linear infinite;
+}
+
+.balloons span:nth-child(1){left:5%;animation-delay:0s;}
+.balloons span:nth-child(2){left:20%;animation-delay:4s;}
+.balloons span:nth-child(3){left:40%;animation-delay:2s;}
+.balloons span:nth-child(4){left:60%;animation-delay:6s;}
+.balloons span:nth-child(5){left:80%;animation-delay:8s;}
+.balloons span:nth-child(6){left:92%;animation-delay:3s;}
+
+/* ===========================
+   ANIMATIONS
+=========================== */
+
+@keyframes zoom{
+    from{
+        transform:scale(1);
+    }
+    to{
+        transform:scale(1.08);
+    }
+}
+
+@keyframes bounce{
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-20px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+
+@keyframes fly{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    100%{
+        transform:translateY(-130vh);
+    }
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:42px;
+}
+
+.hero h2{
+    font-size:34px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+section h2{
+    font-size:32px;
+}
+
+.card{
+    padding:25px;
+    font-size:17px;
+}
+
+.photos img{
+    height:220px;
+}
+
+#timer{
+    font-size:32px;
+}
+
+.cake-emoji{
+    font-size:120px;
+}
+/* ===========================
+   CONFETTIS
+=========================== */
+
+.confetti{
+
+position:fixed;
+
+top:-20px;
+
+width:10px;
+
+height:20px;
+
+z-index:9999;
+
+animation:fall linear forwards;
+
+}
+
+@keyframes fall{
+
+to{
+
+transform:translateY(110vh) rotate(720deg);
+
+}
+
+}
+
+/* ===========================
+   ÉTOILES
+=========================== */
+
+.star{
+
+position:fixed;
+
+width:3px;
+
+height:3px;
+
+background:white;
+
+border-radius:50%;
+
+opacity:.8;
+
+animation:twinkle 2s infinite alternate;
+
+pointer-events:none;
+
+}
+
+@keyframes twinkle{
+
+from{
+
+opacity:.2;
+
+transform:scale(.5);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1.8);
+
+}
+
+}
+
+/* ===========================
+   ZOOM PHOTO
+=========================== */
+
+.zoom{
+
+transform:scale(1.2)!important;
+
+z-index:999;
+
+position:relative;
+
+}
+
+
+</style>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Ballons -->
+    <div class="balloons">
+        <span>🎈</span>
+        <span>🎈</span>
+        <span>🎈</span>
+        <span>🎈</span>
+        <span>🎈</span>
+        <span>🎈</span>
+    </div>
+
+    <!-- Hero -->
+    <header class="hero">
+
+        <h1>🎉 Joyeux Anniversaire 🎉</h1>
+
+        <h2>Ahmat  al mahdi</h2>
+
+        <p>
+            Aujourd'hui tu fêtes tes <strong>11 ans</strong> !
+        </p>
+
+        <a href="#message" class="btn">
+            Découvrir la surprise ❤️
+        </a>
+
+    </header>
+
+    <!-- Message -->
+    <section id="message">
+
+        <h2>💌 Un message rien que pour toi</h2>
+
+        <div class="card">
+
+
+            <p>
+
+                Mon chouchou d'amour,
+
+Tu grandis si vite… Aujourd'hui, tu as déjà 11 ans. Le temps passe tellement vite, 
+<p>mais une chose ne changera jamais : je serai toujours fière de la personne que tu deviens.</p>
+
+Je prie pour que tu grandisses dans la sagesse, le respect, la joie et la bonté 
+ <p>Que la vie t'entoure de personnes sincères qui t'aimeront pour ce que tu es et qui veilleront toujours sur toi</p>
+
+N'oublie jamais que tu es précieux, capable de réaliser de grandes choses et que tu mérites tout le bonheur du monde. Garde toujours ton beau sourire et ton grand cœur.
+
+Je t'aime très fort et je te souhaite un merveilleux anniversaire. Que cette nouvelle année de ta vie soit remplie de rires, de belles découvertes, de réussite et d'amour.
+
+❤️ Joyeux 11ᵉ anniversaire, mon chouchou d'amour. Je t'aime de tout mon cœur. 🎂🎉
+
+            </p>
+
+            <p class="signature">
+
+                ❤️ Avec tout mon amour ta grande soeur Salma ❤️
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- Galerie -->
+    <section class="gallery">
+
+        <h2>📸 Nos plus beaux souvenirs</h2>
+
+        <div class="photos">
+
+            <img src="Image 2026-07-20 at 17.15.48.jpg" alt="photo">
+
+            <img src="images/photo2.jpg" alt="photo">
+
+            <img src="images/photo3.jpg" alt="photo">
+
+            <img src="images/photo4.jpg" alt="photo">
+
+            <img src="images/photo5.jpg" alt="photo">
+
+            <img src="images/photo6.jpg" alt="photo">
+
+        </div>
+
+    </section>
+
+    <!-- Gâteau -->
+    <section class="cake">
+
+        <h2>🎂 Fais un vœu</h2>
+
+        <div class="cake-box">
+
+            <div class="cake-emoji">
+
+                🎂
+
+            </div>
+
+            <button id="wishBtn">
+
+                Souffler les bougies ✨
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- Compteur -->
+    <section class="countdown">
+
+        <h2>⏰ Temps écoulé depuis ta naissance</h2>
+
+        <div id="timer">
+
+            00 : 00 : 00 : 00
+
+        </div>
+
+    </section>
+
+    <!-- Musique -->
+    <section class="music">
+
+        <h2>🎵 Musique d'anniversaire</h2>
+
+        <button id="musicBtn">
+
+            ▶ Lecture
+
+        </button>
+
+        <audio id="birthdayMusic" loop>
+
+            <source src="music/happy-birthday.mp3" type="audio/mpeg">
+
+        </audio>
+
+    </section>
+
+    <!-- Citation -->
+    <section class="quote">
+
+        <h2>🌟</h2>
+
+        <p>
+
+            « Chaque anniversaire est une nouvelle page de ta belle histoire.
+            Remplis-la de bonheur, de réussite et de magnifiques souvenirs. »
+
+        </p>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+
+        <h2>
+
+            ❤️ Joyeux Anniversaire Ahmat ❤️
+
+        </h2>
+
+        <p>
+
+            18 Juillet • 11 ans
+
+        </p>
+
+        <p>
+
+            Que Dieu te protège, te guide et réalise tous tes rêves.
+
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+// ==============================
+// BOUTON MUSIQUE
+// ==============================
+
+const music = document.getElementById("birthdayMusic");
+const musicBtn = document.getElementById("musicBtn");
+
+let playing = false;
+
+musicBtn.addEventListener("click", () => {
+
+    if (!playing) {
+
+        music.play();
+        musicBtn.innerHTML = "⏸ Pause";
+        playing = true;
+
+    } else {
+
+        music.pause();
+        musicBtn.innerHTML = "▶ Lecture";
+        playing = false;
+
+    }
+
+});
+
+// ==============================
+// BOUTON GÂTEAU
+// ==============================
+
+const wishBtn = document.getElementById("wishBtn");
+
+wishBtn.addEventListener("click", () => {
+
+    alert("🎉 Joyeux Anniversaire Ahmat !\n\nQue Dieu te protège, te donne une longue vie, la santé, le bonheur et la réussite. ❤️");
+
+    confettiExplosion();
+
+});
+
+// ==============================
+// TEMPS ÉCOULÉ DEPUIS SA NAISSANCE
+// (18 juillet 2015 → adapte si besoin)
+// ==============================
+
+const birthday = new Date("2015-07-18T00:00:00");
+
+function updateTimer(){
+
+    const now = new Date();
+
+    let diff = now - birthday;
+
+    let days = Math.floor(diff / (1000*60*60*24));
+
+    let hours = Math.floor((diff/(1000*60*60))%24);
+
+    let minutes = Math.floor((diff/(1000*60))%60);
+
+    let seconds = Math.floor((diff/1000)%60);
+
+    document.getElementById("timer").innerHTML =
+        days + " jours " +
+        hours + " h " +
+        minutes + " min " +
+        seconds + " s";
+
+}
+
+setInterval(updateTimer,1000);
+
+updateTimer();
+
+// ==============================
+// CONFETTIS
+// ==============================
+
+function confettiExplosion(){
+
+    for(let i=0;i<180;i++){
+
+        let confetti=document.createElement("div");
+
+        confetti.classList.add("confetti");
+
+        confetti.style.left=Math.random()*100+"vw";
+
+        confetti.style.background=
+        `hsl(${Math.random()*360},100%,50%)`;
+
+        confetti.style.animationDuration=
+        (Math.random()*3+2)+"s";
+
+        confetti.style.transform=
+        `rotate(${Math.random()*360}deg)`;
+
+        document.body.appendChild(confetti);
+
+        setTimeout(()=>{
+
+            confetti.remove();
+
+        },5000);
+
+    }
+
+}
+
+// ==============================
+// MESSAGE DE BIENVENUE
+// ==============================
+
+window.onload=()=>{
+
+setTimeout(()=>{
+
+alert("🎂 Bienvenue sur le site d'anniversaire d'Ahmat ❤️");
+
+},1000);
+
+};
+
+// ==============================
+// EFFET SUR LES PHOTOS
+// ==============================
+
+const photos=document.querySelectorAll(".photos img");
+
+photos.forEach(photo=>{
+
+photo.addEventListener("click",()=>{
+
+photo.classList.toggle("zoom");
+
+});
+
+});
+
+// ==============================
+// EFFET ÉTOILES
+// ==============================
+
+for(let i=0;i<120;i++){
+
+let star=document.createElement("div");
+
+star.className="star";
+
+star.style.left=Math.random()*100+"vw";
+
+star.style.top=Math.random()*100+"vh";
+
+star.style.animationDelay=Math.random()*5+"s";
+
+document.body.appendChild(star);
+
+} 
+</script>
+</body>
+</html>
